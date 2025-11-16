@@ -69,23 +69,25 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-2 border border-gray-700"
+              className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:-translate-y-3 border border-gray-700 animate-scale-in group cursor-pointer relative overflow-hidden"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold text-white">{project.title}</h3>
-                <span className="px-3 py-1 bg-purple-600 text-white rounded-full text-sm font-semibold">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/0 via-purple-600/0 to-blue-600/0 group-hover:from-purple-600/10 group-hover:via-purple-600/5 group-hover:to-blue-600/10 transition-all duration-500"></div>
+              <div className="flex justify-between items-start mb-4 relative z-10">
+                <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors">{project.title}</h3>
+                <span className="px-3 py-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full text-sm font-semibold shadow-lg shadow-purple-500/50 group-hover:shadow-purple-500/75 transition-all duration-300">
                   {project.year}
                 </span>
               </div>
 
-              <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
+              <p className="text-gray-300 mb-6 leading-relaxed relative z-10 group-hover:text-gray-200 transition-colors">{project.description}</p>
 
-              <div className="mb-6">
+              <div className="mb-6 relative z-10">
                 <h4 className="text-sm font-semibold text-purple-400 mb-3">Key Highlights</h4>
                 <ul className="space-y-2">
                   {project.highlights.map((highlight, hIndex) => (
-                    <li key={hIndex} className="flex items-start text-gray-300 text-sm">
-                      <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <li key={hIndex} className="flex items-start text-gray-300 text-sm hover:text-gray-100 transition-colors group/item" style={{ animationDelay: `${hIndex * 0.05}s` }}>
+                      <span className="w-1.5 h-1.5 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full mt-2 mr-3 flex-shrink-0 group-hover/item:scale-150 transition-transform duration-300"></span>
                       {highlight}
                     </li>
                   ))}
@@ -93,25 +95,25 @@ export default function Projects() {
               </div>
 
               {project.metrics.length > 0 && (
-                <div className="flex gap-6 mb-6 pb-6 border-b border-gray-700">
+                <div className="flex gap-6 mb-6 pb-6 border-b border-gray-700 relative z-10">
                   {project.metrics.map((metric, mIndex) => (
-                    <div key={mIndex} className="flex items-center gap-2">
-                      <metric.icon className="w-5 h-5 text-purple-400" />
-                      <div>
-                        <p className="text-lg font-bold text-white">{metric.value}</p>
-                        <p className="text-xs text-gray-400">{metric.label}</p>
+                    <div key={mIndex} className="flex items-center gap-2 group/metric">
+                      <metric.icon className="w-5 h-5 text-purple-400 group-hover/metric:text-blue-300 group-hover/metric:scale-125 group-hover/metric:animate-float-icon transition-all duration-300" />
+                      <div className="group-hover/metric:translate-x-1 transition-transform duration-300">
+                        <p className="text-lg font-bold text-white group-hover/metric:text-transparent group-hover/metric:bg-clip-text group-hover/metric:bg-gradient-to-r group-hover/metric:from-purple-300 group-hover/metric:to-blue-300 transition-all duration-300">{metric.value}</p>
+                        <p className="text-xs text-gray-400 group-hover/metric:text-gray-300 transition-colors">{metric.label}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               )}
 
-              <div className="mb-6">
+              <div className="mb-6 relative z-10">
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, tIndex) => (
                     <span
                       key={tIndex}
-                      className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-xs font-medium"
+                      className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-xs font-medium hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 hover:text-white hover:scale-110 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 cursor-pointer"
                     >
                       {tech}
                     </span>
@@ -120,14 +122,14 @@ export default function Projects() {
               </div>
 
               {project.liveLink && (
-                <div className="flex gap-4">
+                <div className="flex gap-4 relative z-10">
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300"
+                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-purple-500/75 hover:scale-110 transition-all duration-300 group/btn"
                   >
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4 group-hover/btn:rotate-45 transition-transform duration-300" />
                     Live Demo
                   </a>
                 </div>

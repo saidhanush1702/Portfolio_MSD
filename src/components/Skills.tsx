@@ -40,17 +40,20 @@ export default function Skills() {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 animate-scale-in group cursor-pointer relative overflow-hidden"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                <span className="w-2 h-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full mr-3"></span>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-blue-600/0 group-hover:from-purple-600/5 group-hover:to-blue-600/5 transition-all duration-500"></div>
+              <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center relative z-10">
+                <span className="w-2 h-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
                 {category.category}
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 relative z-10">
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-800 rounded-full text-sm font-medium hover:from-purple-600 hover:to-blue-600 hover:text-white transition-all duration-300 cursor-default"
+                    className="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 text-purple-800 rounded-full text-sm font-medium hover:from-purple-600 hover:to-blue-600 hover:text-white hover:scale-110 hover:shadow-lg hover:shadow-purple-400/50 transition-all duration-300 cursor-pointer"
+                    style={{ animationDelay: `${skillIndex * 0.05}s` }}
                   >
                     {skill}
                   </span>

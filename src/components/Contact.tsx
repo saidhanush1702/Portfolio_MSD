@@ -62,38 +62,39 @@ export default function Contact() {
 
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <info.icon className="w-6 h-6 text-white" />
+                <div key={index} className="flex items-start gap-4 group/contact animate-slide-left" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg group-hover/contact:shadow-purple-500/50 group-hover/contact:scale-125 group-hover/contact:rotate-12 transition-all duration-300">
+                    <info.icon className="w-6 h-6 text-white group-hover/contact:animate-float-icon" />
                   </div>
-                  <div>
-                    <p className="text-gray-400 text-sm mb-1">{info.label}</p>
+                  <div className="group-hover/contact:translate-x-2 transition-transform duration-300">
+                    <p className="text-gray-400 text-sm mb-1 group-hover/contact:text-gray-300 transition-colors">{info.label}</p>
                     {info.href ? (
                       <a
                         href={info.href}
-                        className="text-white font-semibold hover:text-purple-400 transition-colors"
+                        className="text-white font-semibold hover:text-purple-300 group-hover/contact:text-purple-300 transition-colors"
                       >
                         {info.value}
                       </a>
                     ) : (
-                      <p className="text-white font-semibold">{info.value}</p>
+                      <p className="text-white font-semibold group-hover/contact:text-purple-300 transition-colors">{info.value}</p>
                     )}
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-12 p-6 bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-xl border border-purple-500/20">
-              <h4 className="text-lg font-bold text-white mb-4">Response Time</h4>
-              <p className="text-gray-400 text-sm">
+            <div className="mt-12 p-6 bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-xl border border-purple-500/20 hover:border-purple-500/50 hover:from-purple-900/50 hover:to-blue-900/50 transition-all duration-300 group/response cursor-pointer animate-scale-in" style={{ animationDelay: '0.3s' }}>
+              <h4 className="text-lg font-bold text-white mb-4 group-hover/response:text-purple-300 transition-colors">Response Time</h4>
+              <p className="text-gray-400 text-sm group-hover/response:text-gray-300 transition-colors">
                 I typically respond within 24-48 hours. For urgent matters, please feel free to call directly.
               </p>
             </div>
           </div>
 
-          <div className="bg-gray-800 rounded-xl p-8 shadow-2xl border border-gray-700">
-            <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="bg-gray-800 rounded-xl p-8 shadow-2xl border border-gray-700 hover:shadow-purple-500/30 transition-all duration-300 group/form animate-scale-in relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-blue-600/0 group-hover/form:from-purple-600/10 group-hover/form:to-blue-600/10 transition-all duration-500"></div>
+            <h3 className="text-2xl font-bold text-white mb-6 relative z-10">Send a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               <div>
                 <label htmlFor="name" className="block text-gray-400 text-sm font-semibold mb-2">
                   Your Name
@@ -160,9 +161,9 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105"
+                className="w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-purple-500/75 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-110 group/btn"
               >
-                <Send className="w-5 h-5" />
+                <Send className="w-5 h-5 group-hover/btn:animate-float-icon" />
                 Send Message
               </button>
             </form>

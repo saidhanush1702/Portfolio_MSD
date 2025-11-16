@@ -73,13 +73,15 @@ export default function Achievements() {
             {achievements.map((achievement, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-purple-100"
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 border border-purple-100 animate-scale-in group cursor-pointer relative overflow-hidden"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className={`w-14 h-14 bg-gradient-to-br ${achievement.color} rounded-lg flex items-center justify-center mb-4 shadow-lg`}>
-                  <achievement.icon className="w-7 h-7 text-white" />
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-blue-600/0 group-hover:from-purple-600/5 group-hover:to-blue-600/5 transition-all duration-500"></div>
+                <div className={`w-14 h-14 bg-gradient-to-br ${achievement.color} rounded-lg flex items-center justify-center mb-4 shadow-lg group-hover:shadow-xl group-hover:shadow-current/50 group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 relative z-10`}>
+                  <achievement.icon className="w-7 h-7 text-white group-hover:animate-float-icon" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">{achievement.title}</h3>
-                <p className="text-gray-600 text-sm">{achievement.description}</p>
+                <h3 className="text-lg font-bold text-gray-800 mb-2 relative z-10 group-hover:text-purple-600 transition-colors">{achievement.title}</h3>
+                <p className="text-gray-600 text-sm relative z-10 group-hover:text-gray-700 transition-colors">{achievement.description}</p>
               </div>
             ))}
           </div>
@@ -93,11 +95,13 @@ export default function Achievements() {
             {extracurricular.map((activity, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                className="bg-white rounded-xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 animate-scale-in group cursor-pointer relative overflow-hidden"
+                style={{ animationDelay: `${index * 0.15}s` }}
               >
-                <div className="text-5xl mb-4">{activity.icon}</div>
-                <h4 className="text-xl font-bold text-gray-800 mb-2">{activity.title}</h4>
-                <p className="text-gray-600 text-sm">{activity.description}</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-blue-600/0 group-hover:from-purple-600/5 group-hover:to-blue-600/5 transition-all duration-500"></div>
+                <div className="text-5xl mb-4 group-hover:scale-150 group-hover:animate-float-icon transition-all duration-300 relative z-10">{activity.icon}</div>
+                <h4 className="text-xl font-bold text-gray-800 mb-2 relative z-10 group-hover:text-purple-600 transition-colors">{activity.title}</h4>
+                <p className="text-gray-600 text-sm relative z-10 group-hover:text-gray-700 transition-colors">{activity.description}</p>
               </div>
             ))}
           </div>

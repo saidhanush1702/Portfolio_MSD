@@ -35,19 +35,20 @@ export default function About() {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12 border border-purple-100">
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12 border border-purple-100 animate-scale-in relative overflow-hidden group cursor-pointer">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-purple-600/5 to-blue-600/0 group-hover:from-purple-600/10 group-hover:via-purple-600/10 group-hover:to-blue-600/10 transition-all duration-700"></div>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6 relative z-10">
               I'm a Computer Science & Engineering student at JNTUH, set to graduate in 2026,
               with a strong passion for building innovative, end-to-end applications that solve
               real-world problems.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            <p className="text-lg text-gray-700 leading-relaxed mb-6 relative z-10">
               With expertise in the MERN stack, data structures, backend systems, and foundational
               knowledge in AI/ML, I thrive on turning complex challenges into elegant solutions.
               My experience spans from freelance projects attracting 500+ monthly visitors to
               internships where I've improved customer engagement by 25% and system responsiveness by 40%.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 leading-relaxed relative z-10">
               Beyond coding, I'm a problem-solver at heart—having solved 500+ DSA problems and
               earned multiple awards in competitive programming. I believe in continuous learning,
               humility, and the power of collaboration to create exceptional digital experiences.
@@ -58,13 +59,15 @@ export default function About() {
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-purple-50"
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 border border-purple-50 animate-scale-in group cursor-pointer relative overflow-hidden"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center mb-4">
-                  <item.icon className="w-7 h-7 text-white" />
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-blue-600/0 group-hover:from-purple-600/5 group-hover:to-blue-600/5 transition-all duration-500"></div>
+                <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center mb-4 shadow-lg group-hover:shadow-purple-500/50 group-hover:scale-110 transition-all duration-300 relative z-10">
+                  <item.icon className="w-7 h-7 text-white group-hover:animate-float-icon" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-2 relative z-10">{item.title}</h3>
+                <p className="text-gray-600 relative z-10">{item.description}</p>
               </div>
             ))}
           </div>
