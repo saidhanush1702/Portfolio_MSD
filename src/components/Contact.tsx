@@ -83,7 +83,7 @@ export default function Contact() {
               ))}
             </div>
 
-            <div className="mt-12 p-6 bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-xl border border-purple-500/20 hover:border-purple-500/50 hover:from-purple-900/50 hover:to-blue-900/50 transition-all duration-300 group/response cursor-pointer animate-scale-in" style={{ animationDelay: '0.3s' }}>
+            <div className="mt-12 p-6 bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-xl border border-purple-500/20 hover:border-purple-500/50 hover:from-purple-900/50 hover:to-blue-900/50 transition-all duration-300 group/response animate-scale-in" style={{ animationDelay: '0.3s' }}>
               <h4 className="text-lg font-bold text-white mb-4 group-hover/response:text-purple-300 transition-colors">Response Time</h4>
               <p className="text-gray-400 text-sm group-hover/response:text-gray-300 transition-colors">
                 I typically respond within 24-48 hours. For urgent matters, please feel free to call directly.

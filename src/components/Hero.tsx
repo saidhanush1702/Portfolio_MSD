@@ -50,44 +50,18 @@ export default function Hero() {
               Hello, I'm
             </p>
             <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-blue-300">
-              M. Sai Dhanush
+              Muthyala Sai Dhanush
             </h1>
             <h2 className="text-2xl md:text-3xl text-blue-200 mb-6 font-light">
-              Full Stack Developer (MERN) <br /> AI/ML Enthusiast
+              Full Stack Developer (MERN) | AI/ML Enthusiast
             </h2>
             <p className="text-lg text-purple-100 mb-8 max-w-2xl leading-relaxed mx-auto"> {/* Added mx-auto */}
               Computer Science student passionate about building scalable
               applications, solving complex problems, and delivering real-world
               solutions with the MERN stack.
             </p>
-<<<<<<< HEAD
-          </div>
 
-          {/* Original Buttons (now centered) */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('contact');
-              }}
-              className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 text-white"
-            >
-              Get In Touch
-            </a>
-            <a
-              href="#projects"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('projects');
-              }}
-              className="px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 text-white"
-            >
-              View Projects
-            </a>
-=======
-
-            <div className="flex flex-wrap gap-4 mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <div className="flex justify-center flex-wrap gap-4 mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
               <a
                 href="#contact"
                 onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
@@ -104,55 +78,9 @@ export default function Hero() {
               </a>
             </div>
 
-            <div className="flex gap-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-              <a
-                href="https://github.com/saidhanush1702"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-gradient-to-br hover:from-purple-600 hover:to-blue-600 transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-purple-500/50 animate-float-icon"
-              >
-                <Github className="w-6 h-6" />
-              </a>
-              <a
-                href="https://linkedin.com/in/sai-dhanush-3a75b4262"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-gradient-to-br hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-blue-500/50 animate-float-icon"
-                style={{ animationDelay: '0.1s' }}
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a
-                href="mailto:muthyalasaidhanush@gmail.com"
-                className="p-3 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-gradient-to-br hover:from-red-600 hover:to-pink-600 transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-red-500/50 animate-float-icon"
-                style={{ animationDelay: '0.2s' }}
-              >
-                <Mail className="w-6 h-6" />
-              </a>
-              <a
-                href="tel:+919687351816"
-                className="p-3 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-gradient-to-br hover:from-green-600 hover:to-emerald-600 transition-all duration-300 hover:scale-125 hover:shadow-lg hover:shadow-green-500/50 animate-float-icon"
-                style={{ animationDelay: '0.3s' }}
-              >
-                <Phone className="w-6 h-6" />
-              </a>
-            </div>
           </div>
 
-          <div className="flex-1 flex justify-center">
-            <div className="relative animate-float">
-              <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 p-2 shadow-2xl shadow-purple-500/50 animate-pulse-glow">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center text-white text-8xl font-bold relative overflow-hidden group cursor-pointer">
-                  <span className="absolute inset-0 bg-gradient-to-br from-purple-600/0 to-blue-600/0 group-hover:from-purple-600/20 group-hover:to-blue-600/20 transition-all duration-500 rounded-full"></span>
-                  <span className="relative animate-scale-in">SD</span>
-                </div>
-              </div>
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-purple-600 rounded-full blur-3xl opacity-50 animate-bounce"></div>
-              <div className="absolute -top-4 -left-4 w-32 h-32 bg-blue-600 rounded-full blur-3xl opacity-50 animate-pulse" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute inset-0 rounded-full animate-rotate-slow" style={{ background: 'conic-gradient(from 0deg, transparent, rgba(139, 92, 246, 0.3), transparent)', opacity: 0.3 }}></div>
-            </div>
->>>>>>> c71097f16d68e0210ac5845ec0d94b10d257514e
-          </div>
+          
         </div>
       </div>
 
